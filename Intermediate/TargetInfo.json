@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "RPCGame",
-			"Path": "D:\\Other\\RPCGame\\Source\\RPCGame.Target.cs",
+			"Path": "D:\\Code\\unrealengine\\RPCStudy\\Source\\RPCGame.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "RPCGameEditor",
-			"Path": "D:\\Other\\RPCGame\\Source\\RPCGameEditor.Target.cs",
+			"Path": "D:\\Code\\unrealengine\\RPCStudy\\Source\\RPCGameEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
