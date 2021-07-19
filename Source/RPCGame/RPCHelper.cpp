@@ -10,6 +10,7 @@ TSharedPtr<DDRecord> DDRecord::Get()
 	if (!RecordInst.IsValid())
 	{
 		RecordInst = MakeShareable(new DDRecord());
-		return RecordInst;
+		
 	}
+	return RecordInst;
 }

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "RPCGame",
+			"Path": "D:\\Code\\UnrealEngine\\RPCStudy\\Source\\RPCGame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "RPCGameEditor",
+			"Path": "D:\\Code\\UnrealEngine\\RPCStudy\\Source\\RPCGameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
