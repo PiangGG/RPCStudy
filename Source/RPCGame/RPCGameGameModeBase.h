@@ -13,5 +13,13 @@ UCLASS()
 class RPCGAME_API ARPCGameGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+	public:
+	ARPCGameGameModeBase();
 	
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+
+	virtual void Logout(AController* Exiting) override;
+
+protected:
+	int32 PlayerCount;
 };
