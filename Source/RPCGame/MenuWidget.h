@@ -6,6 +6,7 @@
 #include "Blueprint/UserWidget.h"
 #include "MenuWidget.generated.h"
 
+class URPCInstance;
 /**
  * 
  */
@@ -14,4 +15,15 @@ class RPCGAME_API UMenuWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
+	public:
+	void AssignRPCInstance(URPCInstance *InInstance);
+
+	UFUNCTION(BlueprintCallable)
+	void LANServerEvent();
+
+	UFUNCTION(BlueprintCallable)
+	void LANClientEvent();
+
+	public:
+	URPCInstance * RPCInstance;
 };

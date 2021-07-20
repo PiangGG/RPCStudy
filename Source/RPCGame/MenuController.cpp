@@ -5,6 +5,8 @@
 
 #include "MenuWidget.h"
 #include "RPCHelper.h"
+#include "RPCInstance.h"
+#include "Kismet/GameplayStatics.h"
 
 void AMenuController::BeginPlay()
 {
@@ -15,13 +17,16 @@ void AMenuController::BeginPlay()
 	FInputModeUIOnly InputMode;
 	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 	SetInputMode(InputMode);
+
+	//获取GameInstance;
+	URPCInstance * RPCInstance=Cast<URPCInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	RPCInstance->AssignPlayerController(this);
 	//创建UI
 	UClass* MenuWidgetClass =LoadClass<UMenuWidget>(NULL,TEXT("WidgetBlueprint'/Game/Blueprint/MenuWidget_BP.MenuWidget_BP_C'"));
-
 	UMenuWidget* MenuWidget = CreateWidget<UMenuWidget>(GetWorld(),MenuWidgetClass);
 	MenuWidget->AddToViewport();
 
-	
+	MenuWidget->AssignRPCInstance(RPCInstance);
 }
 
 void AMenuController::EchoNetMode()

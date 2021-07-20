@@ -8,8 +8,19 @@ public class RPCGame : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore","UMG" });
+		PublicDependencyModuleNames.AddRange(new string[]
+		{
+			"Core", "CoreUObject", "Engine", "InputCore","Slate","UMG",
+			"HeadMountedDisplay",
+			"OnlineSubsystem",
+			"OnlineSubsystemUtils",
+		});
 
+		DynamicallyLoadedModuleNames.AddRange(
+			new string[]
+		{
+			"OnlineSubsystemNull",	
+		});
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		// Uncomment if you are using Slate UI
