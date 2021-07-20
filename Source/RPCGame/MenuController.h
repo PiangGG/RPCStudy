@@ -16,4 +16,5 @@ class RPCGAME_API AMenuController : public APlayerController
 	public:
 	protected:
 	virtual void BeginPlay() override;
+	void EchoNetMode();
 };

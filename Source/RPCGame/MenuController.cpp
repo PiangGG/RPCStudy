@@ -4,6 +4,7 @@
 #include "MenuController.h"
 
 #include "MenuWidget.h"
+#include "RPCHelper.h"
 
 void AMenuController::BeginPlay()
 {
@@ -19,4 +20,32 @@ void AMenuController::BeginPlay()
 
 	UMenuWidget* MenuWidget = CreateWidget<UMenuWidget>(GetWorld(),MenuWidgetClass);
 	MenuWidget->AddToViewport();
+
+	
+}
+
+void AMenuController::EchoNetMode()
+{
+	ENetMode NetMode = GetNetMode();
+
+	switch (NetMode)
+	{
+	case NM_Standalone:
+		DDH::Debug()<<"NM_Standalone"<<DDH::End();
+		break;
+	case NM_DedicatedServer:
+		DDH::Debug()<<"NM_DedicatedServer"<<DDH::End();
+		break;
+	case NM_ListenServer:
+		DDH::Debug()<<"NM_ListenServer"<<DDH::End();
+		break;
+	case NM_Client:
+		DDH::Debug()<<"NM_Client"<<DDH::End();
+		break;
+	case NM_MAX:
+		DDH::Debug()<<"NM_MAX"<<DDH::End();
+		break;
+	default:
+		break;
+	}
 }

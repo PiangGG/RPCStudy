@@ -16,4 +16,6 @@ class RPCGAME_API ARPCController : public APlayerController
 
 	protected:
 	virtual void BeginPlay() override;
+
+	void EchoNetMode();
 };
